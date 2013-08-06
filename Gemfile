@@ -4,6 +4,7 @@ gem 'rails', '3.2.13'
 gem 'mysql2'
 gem 'jquery-rails'
 gem 'kaminari'
+gem 'kaminari-i18n'
 gem 'rails-i18n'
 gem 'redcarpet'
 gem 'simple_form'
@@ -14,7 +15,8 @@ group :development, :test do
 end
 
 group :development do
-  gem 'puma'
+  gem 'pry'
+  gem 'pry-rails'
 end
 
 group :assets do
