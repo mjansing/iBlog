@@ -22,7 +22,7 @@ class CommentsController < ApplicationController
       format.html do
         @comments = @comments.order("id DESC")
         if author = params[:author]
-          @author = Author.find_by_handle(author)
+          @author = Author.find_by(handle: author)
           if @author
             @comments = @comments.where(:author => @author)
             render "comments/index/by_author"
