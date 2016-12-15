@@ -99,7 +99,7 @@ class EntriesController < ApplicationController
 
     params[:entry].delete(:blog_id)
 
-    @entry = Entry.new(params[:entry])
+    @entry = Entry.new(entry_params)
     @entry.author = @author
     @entry.blog = @blog
 
@@ -127,12 +127,12 @@ class EntriesController < ApplicationController
     if @entry.owned_by? @user
       respond_to do |format|
         if params[:commit] == "Vorschau"
-          @entry.assign_attributes(params[:entry])
+          @entry.assign_attributes(entry_params)
           @entry.regenerate_html
           @preview = true
           format.html { render :action => "edit" }
         else
-          if @entry.update_attributes(params[:entry])
+          if @entry.update_attributes(entry_params)
             flash[:success] = 'Der Eintrag wurde gespeichert.'
             format.html { redirect_to blog_entry_url(@entry.blog, @entry) }
             format.xml  { head :ok }
@@ -179,5 +179,11 @@ class EntriesController < ApplicationController
       format.atom { render :action => 'index' }
       format.xml  { render :xml => @entries }
     end
+  end
+
+  private
+
+  def entry_params
+    params.require(:entry).permit(:title, :progress, :plans, :problems, :tag_list)
   end
 end

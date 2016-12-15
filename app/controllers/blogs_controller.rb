@@ -53,7 +53,7 @@ class BlogsController < ApplicationController
   end
 
   def create
-    @blog = Blog.new(params[:blog])
+    @blog = Blog.new(blog_params)
     @blog.author = @author
 
     respond_to do |format|
@@ -73,7 +73,7 @@ class BlogsController < ApplicationController
     @blog = Blog.find(params[:id])
 
     respond_to do |format|
-      if @blog.update_attributes(params[:blog])
+      if @blog.update_attributes(blog_params)
         flash[:success] = 'Das Blog wurde gespeichert.'
         format.html { redirect_to blog_entries_path(@blog) }
         format.xml  { head :ok }
@@ -94,5 +94,11 @@ class BlogsController < ApplicationController
       format.html { redirect_to(blogs_url) }
       format.xml  { head :ok }
     end
+  end
+
+  private
+
+  def blog_params
+    params.require(:blog).permit(:name, :title, :description)
   end
 end

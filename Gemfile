@@ -8,7 +8,6 @@ gem 'kaminari-i18n'
 gem 'rails-i18n'
 gem 'redcarpet'
 gem 'simple_form', '~> 3.1.0'
-gem 'protected_attributes'
 gem 'acts-as-taggable-on', '~> 3.4'
 
 group :development, :test do

@@ -65,7 +65,7 @@ class WeeklyStatusesController < ApplicationController
   end
 
   def create
-    @status = WeeklyStatus.new(params[:weekly_status])
+    @status = WeeklyStatus.new(weekly_status_params)
     @status.author = @author
     if params[:commit] == "Vorschau"
       @status.regenerate_html
@@ -92,7 +92,7 @@ class WeeklyStatusesController < ApplicationController
       @preview = true
       render :edit
     elsif @status.owned_by? @user
-      if @status.update_attributes(params[:weekly_status])
+      if @status.update_attributes(weekly_status_params)
         flash[:success] = "Der Eintrag wurde geändert."
         redirect_to weekly_statuses_path
       else
@@ -113,5 +113,11 @@ class WeeklyStatusesController < ApplicationController
     end
 
     redirect_to weekly_statuses_path
+  end
+
+  private
+
+  def weekly_status_params
+    params.require(:weekly_status).permit(:status)
   end
 end

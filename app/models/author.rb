@@ -14,8 +14,6 @@
 # limitations under the License.
 
 class Author < ActiveRecord::Base
-  attr_accessible :handle, :name, :avatar_uri
-
   # Find or construct an appropriate author, given a handle
   def self.for_handle(handle)
     author = Author.find_by(handle: handle)

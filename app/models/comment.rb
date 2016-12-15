@@ -21,8 +21,6 @@ class Comment < ActiveRecord::Base
   # Points to the object commented by this one.
   belongs_to :owner, :polymorphic => true
 
-  attr_accessible :content
-
   validates :content, :owner_id, :owner_type, :presence => true
 
   before_save :regenerate_html

@@ -22,8 +22,6 @@ class WeeklyStatus < ActiveRecord::Base
 
   default_scope { includes(:author) }
 
-  attr_accessible :status, :status_html
-
   validates :status, :presence => true
 
   before_save :regenerate_html

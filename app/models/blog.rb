@@ -12,8 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 class Blog < ActiveRecord::Base
-  attr_accessible :name, :title, :description
-
   belongs_to :author
 
   has_many :entries, :dependent => :destroy

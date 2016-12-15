@@ -25,8 +25,6 @@ class Entry < ActiveRecord::Base
   default_scope { includes(:author, :tags) }
   scope :by_date, -> { order("created_at DESC") }
 
-  attr_accessible :title, :progress, :plans, :problems, :tag_list
-
   validates :title, :progress, :blog_id, :presence => true
 
   def self.search(query)
