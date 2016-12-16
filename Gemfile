@@ -15,7 +15,7 @@ group :development, :test do
   gem 'awesome_print'
   gem 'letter_opener'
   gem 'addressable'
-  gem 'capybara'
+  gem 'capybara', '~> 2.11.0'
 end
 
 group :development do
