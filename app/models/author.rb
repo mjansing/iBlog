@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-class Author < ActiveRecord::Base
+class Author < ApplicationRecord
   # Find or construct an appropriate author, given a handle
   def self.for_handle(handle)
     author = Author.find_by(handle: handle)

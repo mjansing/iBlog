@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-class WeeklyStatus < ActiveRecord::Base
+class WeeklyStatus < ApplicationRecord
   include MarkdownExtension
   include AuthorExtension
 
