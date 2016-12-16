@@ -1,14 +1,14 @@
 source 'https://rubygems.org'
 
-gem 'rails', '~> 4.2.7.1'
+gem 'rails', '~> 5.0.0'
 gem 'mysql2', '~> 0.3.20'
-gem 'jquery-rails'
-gem 'kaminari'
+gem 'jquery-rails', '~> 4.2.1'
+gem 'kaminari', '~> 0.17.0'
 gem 'kaminari-i18n'
 gem 'rails-i18n'
 gem 'redcarpet'
-gem 'simple_form', '~> 3.1.0'
-gem 'acts-as-taggable-on', '~> 3.4'
+gem 'simple_form', '~> 3.2.1'
+gem 'acts-as-taggable-on', '~> 4.0.0'
 
 group :development, :test do
   gem 'sqlite3'
@@ -20,10 +20,9 @@ end
 
 group :development do
   gem 'byebug'
-  gem 'web-console', '~> 2.0'
+  gem 'web-console', '~> 3.4.0'
   gem 'spring'
   gem 'pry-rails'
-  gem 'quiet_assets'
 end
 
 gem 'sass-rails', '~> 5.0'
