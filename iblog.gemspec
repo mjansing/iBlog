@@ -14,15 +14,15 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib}/**/*", "Rakefile"]
   s.test_files = Dir["test/**/*"]
 
-  s.add_dependency('rails', '>= 4.2.7.1', '< 5.0')
+  s.add_dependency('rails', '>= 5.0.0', '< 5.1.0')
   s.add_dependency 'mysql2', '~> 0.3.20'
-  s.add_dependency 'jquery-rails'
-  s.add_dependency 'kaminari'
+  s.add_dependency 'jquery-rails', '~> 4.2.1'
+  s.add_dependency 'kaminari', '~> 0.17.0'
   s.add_dependency 'kaminari-i18n'
   s.add_dependency 'rails-i18n'
   s.add_dependency 'redcarpet'
-  s.add_dependency 'acts-as-taggable-on', '~> 3.4'
-  s.add_dependency 'simple_form', '~> 3.1.0'
+  s.add_dependency 'acts-as-taggable-on', '~> 4.0.0'
+  s.add_dependency 'simple_form', '~> 3.2.1'
   s.add_dependency 'protected_attributes'
   s.add_dependency 'sass-rails', '~> 5.0'
   s.add_dependency 'bootstrap-sass', '~> 3.3.3'
@@ -34,9 +34,9 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'awesome_print'
   s.add_development_dependency 'letter_opener'
   s.add_development_dependency 'addressable'
-  s.add_development_dependency 'capybara'
+  s.add_development_dependency 'capybara', '~> 2.11.0'
   s.add_development_dependency 'byebug'
-  s.add_development_dependency 'web-console', '~> 2.0'
+  s.add_development_dependency 'web-console', '~> 3.4.0'
   s.add_development_dependency 'spring'
   s.add_development_dependency 'pry-rails'
 end
