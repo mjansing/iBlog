@@ -19,6 +19,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'puma'
   gem 'byebug'
   gem 'web-console', '~> 3.4.0'
   gem 'spring'
