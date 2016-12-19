@@ -23,7 +23,6 @@ Gem::Specification.new do |s|
   s.add_dependency 'redcarpet'
   s.add_dependency 'acts-as-taggable-on', '~> 4.0.0'
   s.add_dependency 'simple_form', '~> 3.2.1'
-  s.add_dependency 'protected_attributes'
   s.add_dependency 'sass-rails', '~> 5.0'
   s.add_dependency 'bootstrap-sass', '~> 3.3.3'
   s.add_dependency 'uglifier', '>= 1.3.0'
