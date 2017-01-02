@@ -1,18 +1,18 @@
-$:.push File.expand_path("../lib", __FILE__)
-require "iblog/version"
+$:.push File.expand_path('../lib', __FILE__)
+require 'iblog/version'
 
 Gem::Specification.new do |s|
-  s.name        = "iblog"
+  s.name        = 'iblog'
   s.version     = Iblog::VERSION
-  s.authors     = ["Marc Jansing"]
-  s.email       = ["marc.jansing@innoq.com"]
-  s.homepage    = "https://github.com/innoq/iblog"
-  s.summary     = "Internal Corporate Blogging & PPP."
-  s.description = "Simple internal blogging/PPP solution."
-  s.license     = "Apache License 2.0"
+  s.authors     = ['Marc Jansing']
+  s.email       = ['marc.jansing@innoq.com']
+  s.homepage    = 'https://github.com/innoq/iblog'
+  s.summary     = 'Internal Corporate Blogging & PPP.'
+  s.description = 'Simple internal blogging/PPP solution.'
+  s.license     = 'Apache License 2.0'
 
-  s.files = Dir["{app,config,db,lib}/**/*", "Rakefile"]
-  s.test_files = Dir["test/**/*"]
+  s.files = Dir['{app,config,db,lib}/**/*', 'Rakefile']
+  s.test_files = Dir['test/**/*']
 
   s.add_dependency('rails', '>= 5.0.1', '< 5.1.0')
   s.add_dependency 'mysql2', '~> 0.3.20'
