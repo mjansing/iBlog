@@ -88,7 +88,7 @@ class BlogsController < ApplicationController
   def destroy
     @blog = Blog.find(params[:id])
     @blog.destroy
-    flash[:notice] = 'Das Blog wurde gelöscht.'
+    flash[:info] = 'Das Blog wurde gelöscht.'
 
     respond_to do |format|
       format.html { redirect_to(blogs_url) }
