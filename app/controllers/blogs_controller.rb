@@ -17,9 +17,9 @@ class BlogsController < ApplicationController
 
   def index
     @blogs = if params[:owner]
-      Blog.by params[:owner]
+      Blog.includes(:author).by params[:owner]
     else
-      Blog.all
+      Blog.includes(:author).all
     end
 
     respond_to do |format|
