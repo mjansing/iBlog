@@ -152,7 +152,7 @@ class EntriesController < ApplicationController
     @entry = Entry.find(params[:id])
     if @entry.owned_by? @user
       @entry.destroy
-      flash[:notice] = 'Der Eintrag wurde gelöscht.'
+      flash[:info] = 'Der Eintrag wurde gelöscht.'
       respond_to do |format|
         format.html { redirect_to blog_entries_url(@entry.blog) }
         format.xml  { head :ok }
