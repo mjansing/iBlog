@@ -87,7 +87,7 @@ class WeeklyStatusesController < ApplicationController
   def update
     @status = WeeklyStatus.find(params[:id])
     if params[:commit] == "Vorschau"
-      @status.assign_attributes(params[:weekly_status])
+      @status.assign_attributes(weekly_status_params)
       @status.regenerate_html
       @preview = true
       render :edit
