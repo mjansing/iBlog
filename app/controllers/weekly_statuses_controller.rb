@@ -15,7 +15,7 @@
 
 class WeeklyStatusesController < ApplicationController
   def index
-    @statuses = WeeklyStatus.recent.page(params[:page])
+    @statuses = WeeklyStatus.recent.page(params[:page]).per(150)
 
     respond_to do |format|
       format.html
