@@ -1,4 +1,4 @@
-atom_feed do |feed|
+atom_feed(root_url: weekly_statuses_url) do |feed|
   feed.title "Wochenstatus"
   feed.updated @statuses.first.updated_at if @statuses.first
   feed.subtitle "weekly internal innoQ blog"
