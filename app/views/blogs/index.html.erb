@@ -29,13 +29,13 @@
         <td>
           <div class="btn-toolbar">
             <div class="btn-group" role="group">
-              <%= link_to "Anzeigen", blog_entries_path(blog), :class => "btn btn-default btn-xs" %>
-              <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+              <%= link_to "Anzeigen", blog_entries_path(blog), :class => "btn btn-secondary btn-sm" %>
+              <button type="button" class="btn btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                 <span class="caret"></span>
               </button>
               <ul class="dropdown-menu" role="menu">
-                <li><%= link_to glyph(:edit), edit_blog_path(blog) %></li>
-                <li><%= link_to glyph(:delete), blog, data: { confirm: "Bist Du sicher?"}, :method => :delete %></li>
+                <li><%= link_to glyph(:edit), edit_blog_path(blog), class: 'dropdown-item' %></li>
+                <li><%= link_to glyph(:delete), blog, class: 'dropdown-item', data: { confirm: "Bist Du sicher?"}, :method => :delete %></li>
               </ul>
             </div>
           </div>

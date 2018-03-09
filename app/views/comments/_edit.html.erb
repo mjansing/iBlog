@@ -11,10 +11,10 @@
 
     <% if edit_comment.new_record? %>
       <%= f.submit 'Kommentar abgeben', :class => 'btn btn-primary' %>
-      <%= f.submit 'Vorschau', :class => 'btn btn-default' %>
+      <%= f.submit 'Vorschau', :class => 'btn btn-secondary' %>
     <% else %>
-      <%= f.submit 'Kommentar ändern', :class => 'btn btn-primary btn-xs' %>
-      <%= f.submit 'Vorschau', :class => 'btn btn-default btn-xs' %>
-      <%= link_to 'Löschen', edit_comment, :method => :delete, :class => 'btn btn-danger btn-xs' %>
+      <%= f.submit 'Kommentar ändern', :class => 'btn btn-primary btn-sm' %>
+      <%= f.submit 'Vorschau', :class => 'btn btn-secondary btn-sm' %>
+      <%= link_to 'Löschen', edit_comment, :method => :delete, :class => 'btn btn-danger btn-sm' %>
     <% end %>
 <% end %>
