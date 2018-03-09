@@ -1,47 +1,52 @@
-<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<nav class="navbar fixed-top navbar-expand-md navbar-dark bg-dark">
   <div class="container">
+    <%= link_to "iBlog", root_path, class: 'navbar-brand' %>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-    <div class="navbar-header">
-      <button class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <%= link_to "iBlog", root_path, class: 'navbar-brand' %>
-    </div>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            PPPs
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <%= link_to 'Neuer Eintrag', new_entry_path, class: current_page?(new_entry_path) ? 'dropdown-item active' : 'dropdown-item' %>
+            <%= link_to 'Neues Blog', new_blog_path, class: current_page?(new_blog_path) ? 'dropdown-item active' : 'dropdown-item' %>
+            <div class="dropdown-divider"></div>
+            <%= link_to 'Alle Einträge', all_entries_path, class: current_page?(all_entries_path) ? 'dropdown-item active' : 'dropdown-item' %>
+            <%= link_to 'Meine Einträge', blog_entries_by_author_path(@user), class: current_page?(blog_entries_by_author_path(@user)) ? 'dropdown-item active' : 'dropdown-item' %>
+            <div class="dropdown-divider"></div>
+            <%= link_to 'Alle Blogs', blogs_path, class: current_page?(blogs_path) ? 'dropdown-item active' : 'dropdown-item' %>
+            <%= link_to 'Meine Blogs', blogs_by_owner_path(@user), class: current_page?(blogs_by_owner_path(@user)) ? 'dropdown-item active' : 'dropdown-item' %>
+          </div>
+        </li>
 
-    <div class="navbar-collapse collapse">
-      <ul class="nav navbar-nav">
-        <%= nav_item "PPPs" do %>
-          <%= nav_item "Neuer Eintrag", new_entry_path %>
-          <%= nav_item "Neues Blog", new_blog_path %>
-          <li class="divider"></li>
-          <%= nav_item "Alle Einträge", all_entries_path %>
-          <%= nav_item "Meine Einträge", blog_entries_by_author_path(@user) %>
-          <li class="divider"></li>
-          <%= nav_item "Alle Blogs", blogs_path %>
-          <%= nav_item "Meine Blogs", blogs_by_owner_path(@user) %>
-        <% end %>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Wochenstatus
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <%= link_to 'Neuer Wochenstatus', new_weekly_status_path, class: current_page?(new_weekly_status_path) ? 'dropdown-item active' : 'dropdown-item' %>
+            <div class="dropdown-divider"></div>
+            <%= link_to 'Diese Woche', weekly_statuses_by_week_path(Time.now.strftime('%V')), class: current_page?(weekly_statuses_by_week_path(Time.now.strftime('%V'))) ? 'dropdown-item active' : 'dropdown-item' %>
+            <%= link_to 'Alle Einträge', weekly_statuses_path, class: current_page?(weekly_statuses_path) ? 'dropdown-item active' : 'dropdown-item' %>
+            <%= link_to 'Meine Einträge', weekly_statuses_by_author_path(@user), class: current_page?(weekly_statuses_by_author_path(@user)) ? 'dropdown-item active' : 'dropdown-item' %>
+          </div>
+        </li>
 
-        <%= nav_item "Wochenstatus" do %>
-          <%= nav_item "Neuer Eintrag", new_weekly_status_path %>
-          <li class="divider"></li>
-          <%= nav_item "Diese Woche", weekly_statuses_by_week_path(Time.now.strftime('%V')) %>
-          <%= nav_item "Alle Einträge", weekly_statuses_path %>
-          <%= nav_item "Meine Einträge", weekly_statuses_by_author_path(@user) %>
-        <% end %>
-
-        <%= nav_item "Kommentare", comments_path %>
-        <li class="divider-vertical"></li>
-        <%= nav_item "Fehler melden", "https://github.com/innoq/iBlog/issues" %>
+        <li class="nav-item <%= 'active' if current_page? comments_path %>">
+          <%= link_to 'Kommentare', comments_path, class: 'nav-link' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Fehler melden', 'https://github.com/innoq/iBlog/issues', class: 'nav-link' %>
+        </li>
       </ul>
 
-      <form method="get" action="<%= search_path %>" class="navbar-form navbar-right">
-        <div class="form-group">
-          <input type="search" name="q" class="form-control" placeholder="Suche">
-        </div>
+      <form class="form-inline my-lg-0" action="<%= search_path %>">
+        <input class="form-control mr-sm-2" name="q" type="search" placeholder="Search" aria-label="Search">
       </form>
     </div>
-
-  </div>
+  </nav>
 </div>

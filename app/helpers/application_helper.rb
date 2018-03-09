@@ -36,23 +36,4 @@ module ApplicationHelper
     }
     @glyphs[name.to_sym]
   end
-
-  def nav_item(title, path = nil, &block)
-    css_class = []
-    css_class << 'active' if path && current_page?(path)
-    css_class << 'dropdown' if block_given?
-
-    content = if block_given?
-      link_to('#', :class => 'dropdown-toggle', :data => {:toggle => 'dropdown'}) do
-        title.html_safe + ' ' + content_tag(:b, nil, :class => 'caret')
-      end + content_tag(:ul, :class => 'dropdown-menu') do
-        yield
-      end
-    else
-      link_to(title, path)
-    end
-
-    content_tag :li, content, :class => css_class
-  end
-
 end
