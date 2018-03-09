@@ -32,8 +32,8 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
-gem 'sass-rails', '~> 5.0'
-gem 'bootstrap-sass', '~> 3.3.3'
+gem 'sass-rails', '~> 5.0.7'
+gem 'bootstrap', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'therubyracer'
 gem 'coffee-rails', '~> 4.2.0'

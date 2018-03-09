@@ -42,12 +42,13 @@ GEM
       activerecord (>= 4.0)
     addressable (2.3.5)
     arel (7.1.4)
-    autoprefixer-rails (5.0.0.1)
+    autoprefixer-rails (8.1.0.1)
       execjs
     awesome_print (1.1.0)
-    bootstrap-sass (3.3.3)
-      autoprefixer-rails (>= 5.0.0.1)
-      sass (>= 3.2.19)
+    bootstrap (4.0.0)
+      autoprefixer-rails (>= 6.0.3)
+      popper_js (>= 1.12.9, < 2)
+      sass (>= 3.5.2)
     builder (3.2.3)
     byebug (3.2.0)
       columnize (~> 0.8)
@@ -113,6 +114,7 @@ GEM
     nio4r (2.2.0)
     nokogiri (1.8.2)
       mini_portile2 (~> 2.3.0)
+    popper_js (1.12.9)
     pry (0.9.12.2)
       coderay (~> 1.0.5)
       method_source (~> 0.8)
@@ -154,8 +156,12 @@ GEM
       ffi (>= 0.5.0)
     redcarpet (2.2.2)
     ref (1.0.5)
-    sass (3.4.22)
-    sass-rails (5.0.6)
+    sass (3.5.5)
+      sass-listen (~> 4.0.0)
+    sass-listen (4.0.0)
+      rb-fsevent (~> 0.9, >= 0.9.4)
+      rb-inotify (~> 0.9, >= 0.9.7)
+    sass-rails (5.0.7)
       railties (>= 4.0.0, < 6)
       sass (~> 3.1)
       sprockets (>= 2.8, < 4.0)
@@ -182,7 +188,7 @@ GEM
       ref
     thor (0.20.0)
     thread_safe (0.3.6)
-    tilt (2.0.5)
+    tilt (2.0.8)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
     uglifier (1.3.0)
@@ -206,7 +212,7 @@ DEPENDENCIES
   acts-as-taggable-on (~> 4.0.0)
   addressable
   awesome_print
-  bootstrap-sass (~> 3.3.3)
+  bootstrap (~> 4.0.0)
   byebug
   capybara (~> 2.11.0)
   coffee-rails (~> 4.2.0)
@@ -221,7 +227,7 @@ DEPENDENCIES
   rails (~> 5.0.6)
   rails-i18n
   redcarpet
-  sass-rails (~> 5.0)
+  sass-rails (~> 5.0.7)
   simple_form (~> 3.2.1)
   spring
   spring-watcher-listen (~> 2.0.0)
