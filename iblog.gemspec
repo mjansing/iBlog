@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   s.files = Dir['{app,config,db,lib}/**/*', 'Rakefile']
   s.test_files = Dir['test/**/*']
 
-  s.add_dependency('rails', '>= 5.0.1', '< 5.1.0')
+  s.add_dependency('rails', '>= 5.0.5', '< 5.1.0')
   s.add_dependency 'mysql2', '~> 0.3.20'
   s.add_dependency 'jquery-rails', '~> 4.2.1'
   s.add_dependency 'kaminari', '~> 0.17.0'
