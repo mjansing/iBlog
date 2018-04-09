@@ -6,7 +6,7 @@
     <h2>
       <%= link_to entry.title, blog_entry_path(entry.blog, entry) %>
       <% if entry.owned_by?(@user) %>
-        <span class="pull-right">
+        <span class="float-right">
           <%= link_to glyph(:edit), edit_blog_entry_path(entry.blog, entry), :class => "btn btn-secondary" %>
           <%= link_to glyph(:delete, true), [entry.blog, entry], :method => :delete, :class => "btn btn-danger" %>
         </span>
@@ -33,14 +33,14 @@
 
   <% unless @preview %>
     <ul class="breadcrumb entry-meta">
-      <li><%= avatar(entry.author) %><%= link_to entry.author.name, blog_entries_by_author_path(:author => entry.author.handle) %></li>
-      <li>Erstellt am <%= l entry.created_at, :format => :short %></li>
+      <li class="breadcrumb-item"><%= avatar(entry.author) %><%= link_to entry.author.name, blog_entries_by_author_path(:author => entry.author.handle) %></li>
+      <li class="breadcrumb-item">Erstellt am <%= l entry.created_at, :format => :short %></li>
       <% if entry.created_at != entry.updated_at %>
-        <li>Geändert am <%= l entry.updated_at, :format => :short %></li>
+        <li class="breadcrumb-item">Geändert am <%= l entry.updated_at, :format => :short %></li>
       <% end %>
-      <li>Blog: <%= link_to entry.blog.name, blog_entries_path(entry.blog) %></li>
-      <li>Kommentare: <%= link_to entry.comments.count, blog_entry_path(entry.blog, entry) %></li>
-      <li>Tags: <%= tags(entry) %></li>
+      <li class="breadcrumb-item">Blog: <%= link_to entry.blog.name, blog_entries_path(entry.blog) %></li>
+      <li class="breadcrumb-item">Kommentare: <%= link_to entry.comments.count, blog_entry_path(entry.blog, entry) %></li>
+      <li class="breadcrumb-item">Tags: <%= tags(entry) %></li>
     </ul>
   <% end %>
 </article>

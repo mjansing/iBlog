@@ -8,7 +8,7 @@
   <%= render @entry %>
 <% end %>
 
-<%= simple_form_for(@entry, html: { class: 'form-horizontal' }, wrapper: :horizontal_form) do |f| %>
+<%= simple_form_for(@entry, wrapper: :horizontal_form) do |f| %>
   <legend>PPP-Eintrag <%= @entry.new_record? ? 'erstellen' : 'bearbeiten' %></legend>
   <%= f.input :blog_id, :collection => Blog.by(@user).map {|b| [b.name, b.id]}, :label => "Blog" %>
   <%= f.error :blog_id %>
@@ -22,7 +22,7 @@
 
   <%= f.input :tag_list, :label => "Tags", :input_html => { :class => "col-md-7", value: @entry.tag_list.to_s } %>
 
-  <div class="form-group">
+  <div class="form-group row">
     <div class="col-sm-offset-2 col-sm-10">
       <%= f.button :submit, :class => 'btn btn-primary' %>
       <%= f.button :submit, :value => 'Vorschau', :class => 'btn btn-secondary' %>
