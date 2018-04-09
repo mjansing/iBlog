@@ -1,15 +1,15 @@
 source 'https://rubygems.org'
 
-gem 'rails', '~> 5.0.6'
-gem 'mysql2', '~> 0.3.20'
-gem 'jquery-rails', '~> 4.2.1'
+gem 'rails', '~> 5.1'
+gem 'mysql2'
+gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 # gem 'turbolinks', '~> 5'
-gem 'kaminari', '~> 0.17.0'
+gem 'kaminari'
 gem 'kaminari-i18n'
 gem 'rails-i18n'
 gem 'redcarpet'
-gem 'simple_form', '~> 3.2.1'
+gem 'simple_form'
 gem 'acts-as-taggable-on', '~> 4.0.0'
 
 group :development, :test do
