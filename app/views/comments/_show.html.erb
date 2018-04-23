@@ -3,7 +3,7 @@
   <% if 1 == this_is_preview %>
     <span class="badge badge-info">Vorschau</span>
   <% else %>
-    <%= link_to url_for(:anchor => "comment-#{comment.id}"), :class => 'comment-timestamp' do %>
+    <%= link_to comment_owner_path(comment), class: 'comment-timestamp' do %>
       <time datetime="<%= comment.created_at.to_s(:rfc822) %>">am <%= l(comment.created_at, :format => :short) %></time>
     <% end %>
     <% if show_owner %> in <%= link_to("#{comment.owner.title}", comment_owner_path(comment)) %><% end %>
