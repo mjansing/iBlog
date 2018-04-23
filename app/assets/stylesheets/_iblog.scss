@@ -121,6 +121,15 @@ blockquote {
   }
 }
 
+pre {
+  display: block;
+  margin-bottom: 2.0736rem;
+  border-right: 2px solid #d8d8d8;
+  background-color: #f7f7f7;
+  padding: 0.5787rem 0.5787rem 0.5787rem 1.44rem;
+  overflow: scroll;
+}
+
 .navbar .nav li.search {
   float: right;
 }
