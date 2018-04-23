@@ -1,6 +1,6 @@
 <%= content_for :title, @entry.title %>
 <%= render @entry %>
-<ol class="comments unstyled">
+<ol id="comments" class="comments unstyled">
   <% @comments.each do |comment| %>
      <%= render :partial => 'comments/comment',
          :locals => { :comment => comment,

@@ -2,7 +2,7 @@
 <h1><%= "Wochenstatus für KW #{@status.created_at.strftime("%V")}" %></h1>
 <%= render @status %>
 
-<ol class="comments unstyled">
+<ol class="comments unstyled" id="comments">
   <% @comments.each do |comment| %>
     <%= render :partial => 'comments/comment',
       :locals => { :comment => comment,
