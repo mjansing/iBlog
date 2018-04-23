@@ -23,8 +23,8 @@ module MarkdownExtension
     # Some objects have more than one field to render as html.
     # For those, cache the markup engine.
     if @_markdown_engine.nil?
-      options = { :autolink => true, :fenced_code_blocks => true }
-      @_markdown_engine = Redcarpet::Markdown.new(Redcarpet::Render::HTML.new(:hard_wrap => false), options)
+      options = { autolink: true, fenced_code_blocks: true, footnotes: true }
+      @_markdown_engine = Redcarpet::Markdown.new(Redcarpet::Render::HTML.new(hard_wrap: false), options)
     end
     @_markdown_engine.render(markdown)
   end
