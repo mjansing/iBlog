@@ -22,7 +22,7 @@
       <% if weekly_status.created_at != weekly_status.updated_at %>
         <li class="breadcrumb-item">Geändert am <%= l weekly_status.updated_at, :format => :long %></li>
       <% end %>
-      <li class="breadcrumb-item">Kommentare: <%= link_to weekly_status.comments.count, weekly_status %></li>
+      <li class="breadcrumb-item">Kommentare: <%= link_to weekly_status.comments.count, weekly_status_path(weekly_status, anchor: 'comments') %></li>
     </ul>
   <% end %>
 </article>

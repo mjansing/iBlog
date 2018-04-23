@@ -39,7 +39,7 @@
         <li class="breadcrumb-item">Geändert am <%= l entry.updated_at, :format => :short %></li>
       <% end %>
       <li class="breadcrumb-item">Blog: <%= link_to entry.blog.name, blog_entries_path(entry.blog) %></li>
-      <li class="breadcrumb-item">Kommentare: <%= link_to entry.comments.count, blog_entry_path(entry.blog, entry) %></li>
+      <li class="breadcrumb-item">Kommentare: <%= link_to entry.comments.count, blog_entry_path(entry.blog, entry, anchor: 'comments') %></li>
       <li class="breadcrumb-item">Tags: <%= tags(entry) %></li>
     </ul>
   <% end %>
