@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'rails-i18n'
   s.add_dependency 'redcarpet'
   s.add_dependency 'acts-as-taggable-on', '~> 5.0.0'
-  s.add_dependency 'simple_form'
+  s.add_dependency 'simple_form', '~> 4.0.0'
   s.add_dependency 'sass-rails'
   s.add_dependency 'bootstrap', '~> 4.0.0'
   s.add_dependency 'uglifier', '>= 1.3.0'
