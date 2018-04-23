@@ -3,8 +3,8 @@
 <% else %>
   <article class="post">
       <% if weekly_status.owned_by?(@user) %>
-        <span class="pull-right">
-          <%= link_to glyph(:edit), edit_weekly_status_path(weekly_status), :class => "btn btn-default" %>
+        <span class="float-right">
+          <%= link_to glyph(:edit), edit_weekly_status_path(weekly_status), :class => "btn btn-secondary" %>
           <%= link_to glyph(:delete, true), weekly_status, :method => :delete, :class => "btn btn-danger" %>
         </span>
       <% end %>
@@ -14,15 +14,15 @@
 
   <% unless @preview %>
     <ul class="breadcrumb entry-meta">
-      <li><%= avatar(weekly_status.author) %><%= link_to weekly_status.author.name, weekly_statuses_by_author_path(:author => weekly_status.author.handle) %></li>
-      <li>
+      <li class="breadcrumb-item"><%= avatar(weekly_status.author) %><%= link_to weekly_status.author.name, weekly_statuses_by_author_path(:author => weekly_status.author.handle) %></li>
+      <li class="breadcrumb-item">
         Erstellt am
         <%= link_to l(weekly_status.created_at, :format => :long), weekly_status_path(weekly_status) %>
       </li>
       <% if weekly_status.created_at != weekly_status.updated_at %>
-        <li>Geändert am <%= l weekly_status.updated_at, :format => :long %></li>
+        <li class="breadcrumb-item">Geändert am <%= l weekly_status.updated_at, :format => :long %></li>
       <% end %>
-      <li>Kommentare: <%= link_to weekly_status.comments.count, weekly_status %></li>
+      <li class="breadcrumb-item">Kommentare: <%= link_to weekly_status.comments.count, weekly_status %></li>
     </ul>
   <% end %>
 </article>

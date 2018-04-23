@@ -1,4 +1,5 @@
 //= require jquery
+//= require popper
 //= require jquery_ujs
 //= require bootstrap
 //= require moment

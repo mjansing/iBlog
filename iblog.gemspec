@@ -14,17 +14,17 @@ Gem::Specification.new do |s|
   s.files = Dir['{app,config,db,lib}/**/*', 'Rakefile']
   s.test_files = Dir['test/**/*']
 
-  s.add_dependency('rails', '>= 5.0.5', '< 5.1.0')
-  s.add_dependency 'mysql2', '~> 0.3.20'
-  s.add_dependency 'jquery-rails', '~> 4.2.1'
-  s.add_dependency 'kaminari', '~> 0.17.0'
+  s.add_dependency 'rails', '~> 5.1.0'
+  s.add_dependency 'mysql2'
+  s.add_dependency 'jquery-rails'
+  s.add_dependency 'kaminari'
   s.add_dependency 'kaminari-i18n'
   s.add_dependency 'rails-i18n'
   s.add_dependency 'redcarpet'
-  s.add_dependency 'acts-as-taggable-on', '~> 4.0.0'
-  s.add_dependency 'simple_form', '~> 3.2.1'
-  s.add_dependency 'sass-rails', '~> 5.0'
-  s.add_dependency 'bootstrap-sass', '~> 3.3.3'
+  s.add_dependency 'acts-as-taggable-on', '~> 5.0.0'
+  s.add_dependency 'simple_form', '~> 4.0.0'
+  s.add_dependency 'sass-rails'
+  s.add_dependency 'bootstrap', '~> 4.0.0'
   s.add_dependency 'uglifier', '>= 1.3.0'
   s.add_dependency 'therubyracer'
   s.add_dependency 'coffee-rails', '~> 4.2.0'

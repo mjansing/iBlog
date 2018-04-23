@@ -21,9 +21,7 @@ module EntriesHelper
 
   def tags(entry)
     entry.tags.map { |tag|
-      content_tag :span, :class => "label label-default tag" do
-        link_to tag.name, tag_path(:tag => tag.name)
-      end
+        link_to tag.name, tag_path(:tag => tag.name), class: 'badge badge-secondary'
     }.join(' ').html_safe
   end
 

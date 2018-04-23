@@ -1,8 +1,10 @@
 require File.join(File.expand_path(File.dirname(__FILE__)), '../test_helper')
+require 'rake'
 
 class UpdateAuthorsTest < ActiveSupport::TestCase
 
   setup do
+    Rake.application.rake_require('lib/tasks/update_authors', [Rails.root.to_s])
     @update_task = Rake::Task['authors:update']
     # This only works when rake has been started at the root directory
     @testfile = "file://#{@update_task.application.original_dir}/test/integration/update_authors_test.data"
