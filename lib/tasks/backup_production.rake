@@ -15,7 +15,7 @@ task :backup_production do
   socket = productionconfig['socket']
   database = productionconfig['database']
 
-  if username.nil? or password.nil? or socket.nil? or database.nil? 
+  if username.nil? or password.nil? or socket.nil? or database.nil?
     raise "Production configuration incomplete - cannot backup."
   end
 
@@ -54,7 +54,7 @@ task :backup_production do
 -- ( echo 'create database if not exists #{database};';
 --   echo 'use #{database};';
 --   bzip2 -dc < #{filename}
--- ) | mysql --user=#{username} --password 
+-- ) | mysql --user=#{username} --password
 --
 HINT
 
@@ -87,7 +87,11 @@ HINT
     wr_at.close
     $stdin.reopen(rd_at)
     $stderr.reopen("/dev/null") # sigh...
-    exec "at", "now", "+", "4", "weeks"
+    if ENV['HOME']
+      exec 'at', 'now', '+', '4', 'weeks', { chdir: ENV['HOME'] }
+    else
+      exec 'at', 'now', '+', '4', 'weeks'
+    end
     raise "Cannot schedule cleanup via at: $!";
   end
 
