@@ -11,7 +11,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-class CreateEntries < ActiveRecord::Migration
+class CreateEntries < ActiveRecord::Migration[4.2]
   def self.up
     create_table :entries do |t|
       t.string :title

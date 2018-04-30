@@ -1,4 +1,4 @@
-class MigrateTagsToActsAsTaggable < ActiveRecord::Migration
+class MigrateTagsToActsAsTaggable < ActiveRecord::Migration[4.2]
   def up
     legacy_tags = ActiveRecord::Base.connection.exec_query('SELECT LOWER(name) as tag_name, entry_id as tag_entry_id FROM tags_legacy;')
 

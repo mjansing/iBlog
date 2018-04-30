@@ -11,7 +11,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-class RemoveBodyFromEntries < ActiveRecord::Migration
+class RemoveBodyFromEntries < ActiveRecord::Migration[4.2]
   def up
     remove_column :entries, :body
     remove_column :entries, :excerpt

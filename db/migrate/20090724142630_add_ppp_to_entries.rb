@@ -11,7 +11,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-class AddPppToEntries < ActiveRecord::Migration
+class AddPppToEntries < ActiveRecord::Migration[4.2]
   def self.up
     add_column :entries, :progress, :string, :limit => 1000
     add_column :entries, :plans, :string, :limit => 1000

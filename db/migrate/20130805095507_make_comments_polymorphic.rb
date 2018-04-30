@@ -1,4 +1,4 @@
-class MakeCommentsPolymorphic < ActiveRecord::Migration
+class MakeCommentsPolymorphic < ActiveRecord::Migration[4.2]
   def change
     rename_column :comments, :entry_id, :owner_id
     add_column :comments, :owner_type, :string

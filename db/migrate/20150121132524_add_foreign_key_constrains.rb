@@ -1,4 +1,4 @@
-class AddForeignKeyConstrains < ActiveRecord::Migration
+class AddForeignKeyConstrains < ActiveRecord::Migration[4.2]
   def up
     say 'remove unreferenced tags...'
     execute <<-SQL

@@ -11,7 +11,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-class AlterColumnProgress < ActiveRecord::Migration
+class AlterColumnProgress < ActiveRecord::Migration[4.2]
   def self.up
     change_column :entries, :progress, :string, :limit => 2000
   end

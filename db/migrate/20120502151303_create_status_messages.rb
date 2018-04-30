@@ -11,7 +11,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-class CreateStatusMessages < ActiveRecord::Migration
+class CreateStatusMessages < ActiveRecord::Migration[4.2]
 
   def change
     create_table :status_messages do |t|

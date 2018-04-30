@@ -11,7 +11,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-class AddHtmlFieldsToEntries < ActiveRecord::Migration
+class AddHtmlFieldsToEntries < ActiveRecord::Migration[4.2]
   def change
     add_column :entries, :progress_html, :string, :limit => 2000
     add_column :entries, :plans_html, :string, :limit => 1000

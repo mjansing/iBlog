@@ -11,7 +11,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-class ExtendFieldLengths < ActiveRecord::Migration
+class ExtendFieldLengths < ActiveRecord::Migration[4.2]
   def up
     change_column :entries, :progress, :text
     change_column :entries, :plans, :text

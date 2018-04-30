@@ -1,4 +1,4 @@
-class Utf8Conversion < ActiveRecord::Migration
+class Utf8Conversion < ActiveRecord::Migration[4.2]
   def up
     if ActiveRecord::Base.connection.adapter_name == 'Mysql2'
       change_database_encoding('utf8', 'utf8_general_ci')

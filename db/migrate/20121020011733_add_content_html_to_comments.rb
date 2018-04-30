@@ -11,7 +11,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-class AddContentHtmlToComments < ActiveRecord::Migration
+class AddContentHtmlToComments < ActiveRecord::Migration[4.2]
   def up
     add_column :comments, :content_html, :text
     Comment.all.each do |c|

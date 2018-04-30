@@ -1,4 +1,4 @@
-class DropStatusMessageLegacyTable < ActiveRecord::Migration
+class DropStatusMessageLegacyTable < ActiveRecord::Migration[4.2]
   def up
     execute <<-SQL
 DROP TABLE status_messages;

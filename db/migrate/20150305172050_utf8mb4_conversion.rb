@@ -1,4 +1,4 @@
-class Utf8mb4Conversion < ActiveRecord::Migration
+class Utf8mb4Conversion < ActiveRecord::Migration[4.2]
   def up
     if ActiveRecord::Base.connection.adapter_name == 'Mysql2'
       change_column :blogs, :name, :string, limit: 191
