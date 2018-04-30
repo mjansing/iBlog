@@ -1,5 +1,9 @@
 test:
   adapter: mysql2
-  database: iblog_test
-  username: travis
   encoding: utf8mb4
+  reconnect: false
+  database: iblog_test
+  pool: 5
+  username: travis
+  password:
+  host: 127.0.0.1
